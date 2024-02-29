@@ -50,17 +50,6 @@
 			)
 		)
 		(symbol "BNO08X_0_1"
-			(rectangle
-				(start 0 -1.27)
-				(end 33.02 -45.72)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
 			(polyline
 				(pts
 					(xy 0 -3.81) (xy 33.02 -3.81)
@@ -75,6 +64,17 @@
 			)
 		)
 		(symbol "BNO08X_1_1"
+			(rectangle
+				(start 0 -1.27)
+				(end 33.02 -45.72)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
 			(text "BNO08X"
 				(at 16.764 -2.54 0)
 				(effects

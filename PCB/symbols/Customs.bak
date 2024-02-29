@@ -427,7 +427,7 @@
 			)
 		)
 	)
-	(symbol "ESP32-S3-WROOM-2"
+	(symbol "ESP32-S3-WROOM-1-N16"
 		(pin_names
 			(offset 0.002)
 		)
@@ -477,7 +477,7 @@
 				(hide yes)
 			)
 		)
-		(symbol "ESP32-S3-WROOM-2_0_1"
+		(symbol "ESP32-S3-WROOM-1-N16_0_1"
 			(rectangle
 				(start 0 -1.27)
 				(end 43.18 -49.53)
@@ -502,7 +502,7 @@
 				)
 			)
 		)
-		(symbol "ESP32-S3-WROOM-2_1_1"
+		(symbol "ESP32-S3-WROOM-1-N16_1_1"
 			(text "ESP32-S3-WROOM-1-N16"
 				(at 21.59 -2.54 0)
 				(effects
