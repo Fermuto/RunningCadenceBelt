@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Inertial Measurement Unit Board")
-		(date "2024-02-28")
-		(rev "v1.0.0")
+		(date "2024-03-01")
+		(rev "v1.2.0")
 		(company "Running Cadence Measurement Belt")
 		(comment 1 "For Round 1 PCB Order")
 	)
