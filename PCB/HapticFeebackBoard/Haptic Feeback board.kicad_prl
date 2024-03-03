@@ -1,6 +1,10 @@
 {
   "board": {
+<<<<<<< HEAD
     "active_layer": 44,
+=======
+    "active_layer": 0,
+>>>>>>> e5232eae826fbccf56e852269530e34193af05fc
     "active_layer_preset": "All Layers",
     "auto_track_width": true,
     "hidden_netclasses": [],
@@ -66,6 +70,12 @@
     ],
     "visible_layers": "fffffff_ffffffff",
     "zone_display_mode": 1
+  },
+  "git": {
+    "repo_password": "",
+    "repo_type": "",
+    "repo_username": "",
+    "ssh_key": ""
   },
   "meta": {
     "filename": "Haptic Feeback board.kicad_prl",
