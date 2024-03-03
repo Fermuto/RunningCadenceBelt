@@ -38,6 +38,19 @@
   )
 
   (setup
+    (stackup
+      (layer "F.SilkS" (type "Top Silk Screen"))
+      (layer "F.Paste" (type "Top Solder Paste"))
+      (layer "F.Mask" (type "Top Solder Mask") (thickness 0.01))
+      (layer "F.Cu" (type "copper") (thickness 0.035))
+      (layer "dielectric 1" (type "core") (thickness 1.51) (material "FR4") (epsilon_r 4.5) (loss_tangent 0.02))
+      (layer "B.Cu" (type "copper") (thickness 0.035))
+      (layer "B.Mask" (type "Bottom Solder Mask") (thickness 0.01))
+      (layer "B.Paste" (type "Bottom Solder Paste"))
+      (layer "B.SilkS" (type "Bottom Silk Screen"))
+      (copper_finish "None")
+      (dielectric_constraints no)
+    )
     (pad_to_mask_clearance 0)
     (pcbplotparams
       (layerselection 0x00010fc_ffffffff)
@@ -94,15 +107,15 @@
     (property "ki_keywords" "mounting hole")
     (path "/80652055-c25b-49e3-8617-eac554a773eb")
     (attr exclude_from_pos_files)
-    (fp_text reference "H3" (at 0 -4.2) (layer "F.SilkS")
+    (fp_text reference "H3" (at 0 -4.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 09352ec8-20b3-4dd9-a07c-f6ce1be39307)
     )
-    (fp_text value "MountingHole" (at 0 4.2) (layer "F.Fab")
+    (fp_text value "MountingHole" (at 0 4.2) (layer "F.Fab") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 32272bfc-f589-419e-8a6b-0d814a7956e5)
     )
-    (fp_text user "${REFERENCE}" (at 0.6858 0.5078) (layer "F.Fab")
+    (fp_text user "${REFERENCE}" (at 0.6858 0.5078) (layer "F.Fab") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 95aa0948-21a6-4cec-9581-9b4e00e8e760)
     )
@@ -124,15 +137,15 @@
     (property "ki_keywords" "mounting hole")
     (path "/1f1a9a3d-1e5a-4172-9fd3-eb0ece42d9a4")
     (attr exclude_from_pos_files)
-    (fp_text reference "H2" (at 0 -4.2) (layer "F.SilkS")
+    (fp_text reference "H2" (at 0 -4.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp f411c7ae-e635-4784-abfb-e825dd591fc0)
     )
-    (fp_text value "MountingHole" (at 0 4.2) (layer "F.Fab")
+    (fp_text value "MountingHole" (at 0 4.2) (layer "F.Fab") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp dc46fefb-89d0-4b9d-a639-ab38dec261f6)
     )
-    (fp_text user "${REFERENCE}" (at 0 0) (layer "F.Fab")
+    (fp_text user "${REFERENCE}" (at 0 0) (layer "F.Fab") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 93be4858-b138-4b69-a0b4-e3331465b19f)
     )
@@ -274,7 +287,7 @@
 
   (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder" (layer "F.Cu")
     (tstamp 55e76ec1-d1f0-444e-9f44-cd203dc10cee)
-    (at 136.7829 101.2698)
+    (at 135.3351 94.2086)
     (descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator")
     (tags "capacitor handsolder")
     (property "Sheetfile" "Haptic Feeback board.kicad_sch")
@@ -287,11 +300,11 @@
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 2b8d8562-a685-4162-84ff-1af9d1742009)
     )
-    (fp_text value "1uF" (at 0 1.68) (layer "F.Fab")
+    (fp_text value "1uF" (at 0 1.68) (layer "F.Fab") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 3b40f584-c981-41a2-b4cf-f1c0d865656e)
     )
-    (fp_text user "${REFERENCE}" (at 0 0) (layer "F.Fab")
+    (fp_text user "${REFERENCE}" (at 0 0) (layer "F.Fab") hide
         (effects (font (size 0.5 0.5) (thickness 0.08)))
       (tstamp af1c3838-1309-43e8-b1d3-9458e94f4b62)
     )
@@ -337,15 +350,15 @@
     (property "ki_keywords" "mounting hole")
     (path "/92d572d0-c6bf-4b4a-87c3-ac3167ff204b")
     (attr exclude_from_pos_files)
-    (fp_text reference "H4" (at 0 -4.2) (layer "F.SilkS")
+    (fp_text reference "H4" (at 0 -4.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 7ae73e00-ab5d-4739-957f-a4383c6c5ded)
     )
-    (fp_text value "MountingHole" (at 0 4.2) (layer "F.Fab")
+    (fp_text value "MountingHole" (at 0 4.2) (layer "F.Fab") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 4b0662b3-069e-40bc-a949-74bd77664c25)
     )
-    (fp_text user "${REFERENCE}" (at 0.2286 0.127) (layer "F.Fab")
+    (fp_text user "${REFERENCE}" (at 0.2286 0.127) (layer "F.Fab") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 495a9a3f-7730-4c86-8069-acf86da4a635)
     )
@@ -358,7 +371,7 @@
 
   (footprint "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" (layer "F.Cu")
     (tstamp 97360c2c-c9dd-40a5-8527-1344a10e3252)
-    (at 91.4294 104.8258)
+    (at 127.2286 82.7024)
     (descr "Molex KK-254 Interconnect System, old/engineering part number: AE-6410-02A example for new part number: 22-27-2021, 2 Pins (http://www.molex.com/pdm_docs/sd/022272021_sd.pdf), generated with kicad-footprint-generator")
     (tags "connector Molex KK-254 vertical")
     (property "Sheetfile" "Haptic Feeback board.kicad_sch")
@@ -519,15 +532,15 @@
     (property "ki_keywords" "mounting hole")
     (path "/7413955b-a76f-4ab2-9fc5-25b79ff4f8f5")
     (attr exclude_from_pos_files)
-    (fp_text reference "H1" (at 0 -4.2) (layer "F.SilkS")
+    (fp_text reference "H1" (at 0 -4.2) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp eb649a83-68be-46e6-90fd-e0ba2ea93b1c)
     )
-    (fp_text value "MountingHole" (at 0 4.2) (layer "F.Fab")
+    (fp_text value "MountingHole" (at 0 4.2) (layer "F.Fab") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 136d64ed-e2c4-4a28-96c6-48a4f6019129)
     )
-    (fp_text user "${REFERENCE}" (at 0 0) (layer "F.Fab")
+    (fp_text user "${REFERENCE}" (at 0 0) (layer "F.Fab") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 3a8ce282-eae6-4879-b0f2-5a4f3a4fa527)
     )
@@ -540,7 +553,7 @@
 
   (footprint "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" (layer "F.Cu")
     (tstamp c9f953ce-0bb3-47b3-bd90-1a8b0e5161f3)
-    (at 98.5594 104.8258)
+    (at 137.0838 106.6038)
     (descr "Molex KK-254 Interconnect System, old/engineering part number: AE-6410-02A example for new part number: 22-27-2021, 2 Pins (http://www.molex.com/pdm_docs/sd/022272021_sd.pdf), generated with kicad-footprint-generator")
     (tags "connector Molex KK-254 vertical")
     (property "Sheetfile" "Haptic Feeback board.kicad_sch")
@@ -632,7 +645,7 @@
 
   (footprint "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" (layer "F.Cu")
     (tstamp e7659b22-cfcc-46a3-9525-a6feb4462448)
-    (at 105.6894 104.8258)
+    (at 146.3802 105.41)
     (descr "Molex KK-254 Interconnect System, old/engineering part number: AE-6410-02A example for new part number: 22-27-2021, 2 Pins (http://www.molex.com/pdm_docs/sd/022272021_sd.pdf), generated with kicad-footprint-generator")
     (tags "connector Molex KK-254 vertical")
     (property "Sheetfile" "Haptic Feeback board.kicad_sch")
@@ -786,7 +799,7 @@
 
   (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (layer "F.Cu")
     (tstamp fa814845-efdc-4a08-91b8-6cd1340cb271)
-    (at 141.8496 93.5228)
+    (at 135.7122 89.662)
     (descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags "resistor handsolder")
     (property "Sheetfile" "Haptic Feeback board.kicad_sch")
@@ -795,15 +808,15 @@
     (property "ki_keywords" "R res resistor")
     (path "/085a4961-2cba-4b4b-8299-1f6637894f2e")
     (attr smd)
-    (fp_text reference "R1" (at 0 -1.65) (layer "F.SilkS") hide
+    (fp_text reference "R1" (at 0 -1.65) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp de2c639c-b3bf-4d47-9667-be7454408685)
     )
-    (fp_text value "10k" (at 0 -2.1082) (layer "F.SilkS")
+    (fp_text value "10k" (at 0 -2.1082) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 06920b8b-cd13-47bb-a74b-5e4146fd46e5)
     )
-    (fp_text user "${REFERENCE}" (at 0 0) (layer "F.Fab")
+    (fp_text user "${REFERENCE}" (at 0 0) (layer "F.Fab") hide
         (effects (font (size 0.5 0.5) (thickness 0.08)))
       (tstamp 6b9e50d5-c2c9-4034-9a2b-57a627cca554)
     )
