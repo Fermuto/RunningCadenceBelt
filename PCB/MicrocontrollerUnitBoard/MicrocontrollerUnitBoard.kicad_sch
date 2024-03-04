@@ -2162,16 +2162,34 @@
 		(uuid "089a2db1-7a0d-4ef0-b711-fd487962e0e1")
 	)
 	(junction
+		(at 34.29 154.94)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0e8c772e-802b-4c30-a9a5-0d4ca825c71f")
+	)
+	(junction
 		(at 104.14 57.15)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "128d8336-83f0-4d25-a08b-bee105e1c238")
 	)
 	(junction
+		(at 34.29 147.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "12e46c17-8eee-4a8d-9e37-f6e580996d4d")
+	)
+	(junction
 		(at 60.96 156.21)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "23539e2b-4c3a-4ca6-8963-ae1c79566355")
+	)
+	(junction
+		(at 101.6 138.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2931e2c7-deda-4bd2-a863-ad3d77737e2a")
 	)
 	(junction
 		(at 187.96 48.26)
@@ -2198,16 +2216,34 @@
 		(uuid "8ccfe45f-2e91-465f-bfe0-0cb1c0f9cba5")
 	)
 	(junction
+		(at 91.44 138.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "99a62f58-ead3-4f30-8917-5e979c474b6c")
+	)
+	(junction
 		(at 187.96 57.15)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a11d4ea8-0802-4d36-a675-6911d58aa08a")
 	)
 	(junction
+		(at 81.28 138.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a2a63705-90d4-4ee4-b054-bf2d4b368d1d")
+	)
+	(junction
 		(at 185.42 48.26)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b74bdf0d-814a-4a84-9f24-13cfaa6b0b00")
+	)
+	(junction
+		(at 71.12 138.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b7fd3706-4d1f-47ef-922a-8260c91c2ed4")
 	)
 	(junction
 		(at 123.19 57.15)
@@ -2226,6 +2262,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "db11ce61-dec7-4795-b33c-6ae3ff496e12")
+	)
+	(junction
+		(at 34.29 161.29)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "dda48af6-c8a0-4f17-bd6e-e065c7559f29")
 	)
 	(junction
 		(at 40.64 147.32)
@@ -2261,6 +2303,16 @@
 	)
 	(wire
 		(pts
+			(xy 34.29 161.29) (xy 34.29 167.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0214c069-ffad-4a00-b2ec-1323653a734f")
+	)
+	(wire
+		(pts
 			(xy 151.13 45.72) (xy 151.13 48.26)
 		)
 		(stroke
@@ -2291,6 +2343,16 @@
 	)
 	(wire
 		(pts
+			(xy 101.6 138.43) (xy 111.76 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "15372256-d376-4838-9637-45da7bfa434b")
+	)
+	(wire
+		(pts
 			(xy 59.69 106.68) (xy 83.82 106.68)
 		)
 		(stroke
@@ -2311,6 +2373,26 @@
 	)
 	(wire
 		(pts
+			(xy 34.29 147.32) (xy 40.64 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "213c636e-993f-4bd5-8059-b05422c75a8d")
+	)
+	(wire
+		(pts
+			(xy 34.29 147.32) (xy 34.29 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "22647a3b-f4a3-44f1-bb64-b0f3db044db1")
+	)
+	(wire
+		(pts
 			(xy 104.14 57.15) (xy 114.3 57.15)
 		)
 		(stroke
@@ -2318,6 +2400,16 @@
 			(type default)
 		)
 		(uuid "28238934-fdac-41b0-bec7-f19f8f03f48d")
+	)
+	(wire
+		(pts
+			(xy 34.29 161.29) (xy 34.29 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2942ab74-e0f1-4c2c-9a3d-f9660edb9b9f")
 	)
 	(wire
 		(pts
@@ -2371,6 +2463,16 @@
 	)
 	(wire
 		(pts
+			(xy 91.44 138.43) (xy 101.6 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "45871d5a-acc5-44b0-891e-a4e10d27ceb2")
+	)
+	(wire
+		(pts
 			(xy 232.41 90.17) (xy 232.41 93.98)
 		)
 		(stroke
@@ -2421,6 +2523,16 @@
 	)
 	(wire
 		(pts
+			(xy 30.48 154.94) (xy 34.29 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "50680ab9-3ea8-45a9-871c-42bb2e3b4e3f")
+	)
+	(wire
+		(pts
 			(xy 59.69 104.14) (xy 82.55 104.14)
 		)
 		(stroke
@@ -2448,6 +2560,26 @@
 			(type default)
 		)
 		(uuid "5e5938e2-e49d-4299-9727-1ee756af7205")
+	)
+	(wire
+		(pts
+			(xy 30.48 167.64) (xy 34.29 167.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64066665-3a1c-4af2-84c0-6caa8c62bbb4")
+	)
+	(wire
+		(pts
+			(xy 30.48 161.29) (xy 34.29 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6db1adfb-6bf0-471f-9857-7af67da3dcc3")
 	)
 	(wire
 		(pts
@@ -2508,6 +2640,26 @@
 			(type default)
 		)
 		(uuid "8b748f6e-d704-4848-be75-9fc5d3ed0ac4")
+	)
+	(wire
+		(pts
+			(xy 81.28 138.43) (xy 91.44 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8c654e93-67bc-445d-a9a2-273e5b0d7b46")
+	)
+	(wire
+		(pts
+			(xy 71.12 138.43) (xy 81.28 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8d6acbaa-7b83-4373-9531-1b005948bd3b")
 	)
 	(wire
 		(pts
@@ -2661,7 +2813,7 @@
 	)
 	(wire
 		(pts
-			(xy 30.48 147.32) (xy 40.64 147.32)
+			(xy 30.48 147.32) (xy 34.29 147.32)
 		)
 		(stroke
 			(width 0)
@@ -3424,7 +3576,7 @@
 		(dnp no)
 		(uuid "2c697bcb-2df2-4084-84b8-8954a52cf428")
 		(property "Reference" "GND1"
-			(at 66.294 135.89 0)
+			(at 65.024 134.366 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3433,7 +3585,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 61.722 138.176 0)
+			(at 61.468 136.652 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3595,6 +3747,72 @@
 			(project "MicrocontrollerUnitBoard"
 				(path "/c53a7594-fcf3-4831-ad00-8318fe9f195d"
 					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 111.76 138.43 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "301d6a0c-f16f-4f8d-af17-7a6b2d4fdc39")
+		(property "Reference" "GND5"
+			(at 105.664 134.366 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 102.108 136.652 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm"
+			(at 116.84 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 116.84 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 111.76 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b39e8cbf-c4e8-478d-8bf2-1548742242a4")
+		)
+		(instances
+			(project "MicrocontrollerUnitBoard"
+				(path "/c53a7594-fcf3-4831-ad00-8318fe9f195d"
+					(reference "GND5")
 					(unit 1)
 				)
 			)
@@ -4478,6 +4696,72 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 101.6 138.43 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8204b806-0df0-49be-b071-8e8106d895a9")
+		(property "Reference" "GND4"
+			(at 95.504 134.366 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 91.948 136.652 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm"
+			(at 106.68 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 106.68 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 101.6 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b1b0bfa5-a72e-4792-a953-cf6585caea8c")
+		)
+		(instances
+			(project "MicrocontrollerUnitBoard"
+				(path "/c53a7594-fcf3-4831-ad00-8318fe9f195d"
+					(reference "GND4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Mechanical:MountingHole")
 		(at 215.9 162.56 0)
 		(unit 1)
@@ -4536,6 +4820,72 @@
 			(project "MicrocontrollerUnitBoard"
 				(path "/c53a7594-fcf3-4831-ad00-8318fe9f195d"
 					(reference "H3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 30.48 161.29 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "900699ff-c338-48b6-9224-795034c9ff80")
+		(property "Reference" "3.3V3"
+			(at 25.654 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 21.082 161.036 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm"
+			(at 35.56 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 35.56 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 30.48 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6595918f-e5c7-4f31-9ff4-6ac0625f84ed")
+		)
+		(instances
+			(project "MicrocontrollerUnitBoard"
+				(path "/c53a7594-fcf3-4831-ad00-8318fe9f195d"
+					(reference "3.3V3")
 					(unit 1)
 				)
 			)
@@ -5010,6 +5360,138 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
+		(at 91.44 138.43 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ad252aa7-620b-44a8-b87f-b497156f4096")
+		(property "Reference" "GND3"
+			(at 85.344 134.366 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 81.788 136.652 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm"
+			(at 96.52 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 96.52 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 91.44 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "40a0856f-6b3f-49d8-a04f-83563a76d194")
+		)
+		(instances
+			(project "MicrocontrollerUnitBoard"
+				(path "/c53a7594-fcf3-4831-ad00-8318fe9f195d"
+					(reference "GND3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 30.48 167.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bc1e2ed3-c0fb-4dc6-979f-59beffd555ca")
+		(property "Reference" "3.3V4"
+			(at 25.654 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 21.082 167.386 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm"
+			(at 35.56 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 35.56 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 30.48 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0c890a98-4ddf-49fc-b726-69e5beb22345")
+		)
+		(instances
+			(project "MicrocontrollerUnitBoard"
+				(path "/c53a7594-fcf3-4831-ad00-8318fe9f195d"
+					(reference "3.3V4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
 		(at 83.82 106.68 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5135,6 +5617,72 @@
 			(project "MicrocontrollerUnitBoard"
 				(path "/c53a7594-fcf3-4831-ad00-8318fe9f195d"
 					(reference "MOSI1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 30.48 154.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c6d6631b-3e21-4822-807f-a37a0d7e5faf")
+		(property "Reference" "3.3V2"
+			(at 25.654 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 21.082 154.686 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm"
+			(at 35.56 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 35.56 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 30.48 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6ba7e459-88c4-4590-b57e-4dd1b36bd322")
+		)
+		(instances
+			(project "MicrocontrollerUnitBoard"
+				(path "/c53a7594-fcf3-4831-ad00-8318fe9f195d"
+					(reference "3.3V2")
 					(unit 1)
 				)
 			)
@@ -5728,6 +6276,72 @@
 			(project "MicrocontrollerUnitBoard"
 				(path "/c53a7594-fcf3-4831-ad00-8318fe9f195d"
 					(reference "3.3V1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 81.28 138.43 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f8ecb85b-24d1-4003-821d-7524f8920fc0")
+		(property "Reference" "GND2"
+			(at 75.184 134.366 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 71.628 136.652 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm"
+			(at 86.36 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 86.36 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 81.28 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "eda7cfc2-d0fd-4c28-9210-4fcb9ebe88d4")
+		)
+		(instances
+			(project "MicrocontrollerUnitBoard"
+				(path "/c53a7594-fcf3-4831-ad00-8318fe9f195d"
+					(reference "GND2")
 					(unit 1)
 				)
 			)
