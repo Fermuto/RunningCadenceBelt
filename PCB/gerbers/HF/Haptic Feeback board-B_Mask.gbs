@@ -1,12 +1,12 @@
-G04 #@! TF.GenerationSoftware,KiCad,Pcbnew,8.0.0*
-G04 #@! TF.CreationDate,2024-03-03T20:56:18-06:00*
-G04 #@! TF.ProjectId,Haptic Feeback board,48617074-6963-4204-9665-656261636b20,rev?*
-G04 #@! TF.SameCoordinates,Original*
-G04 #@! TF.FileFunction,Soldermask,Bot*
-G04 #@! TF.FilePolarity,Negative*
+%TF.GenerationSoftware,KiCad,Pcbnew,8.0.0*%
+%TF.CreationDate,2024-03-04T01:03:27-06:00*%
+%TF.ProjectId,Haptic Feeback board,48617074-6963-4204-9665-656261636b20,rev?*%
+%TF.SameCoordinates,Original*%
+%TF.FileFunction,Soldermask,Bot*%
+%TF.FilePolarity,Negative*%
 %FSLAX46Y46*%
 G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
-G04 Created by KiCad (PCBNEW 8.0.0) date 2024-03-03 20:56:18*
+G04 Created by KiCad (PCBNEW 8.0.0) date 2024-03-04 01:03:27*
 %MOMM*%
 %LPD*%
 G01*
@@ -34,35 +34,36 @@ G04 Aperture macros list end*
 %ADD12O,1.740000X2.190000*%
 G04 APERTURE END LIST*
 D10*
-G04 #@! TO.C,H3*
+%TO.C,H3*%
 X125500000Y-112000000D03*
-G04 #@! TD*
-G04 #@! TO.C,H2*
+%TD*%
+%TO.C,H2*%
 X125500000Y-83000000D03*
-G04 #@! TD*
-G04 #@! TO.C,H4*
-X156500000Y-112000000D03*
-G04 #@! TD*
+%TD*%
 D11*
-G04 #@! TO.C,J2*
+%TO.C,J3*%
+X142621000Y-102387400D03*
+D12*
+X145161000Y-102387400D03*
+%TD*%
+D10*
+%TO.C,H4*%
+X156500000Y-112000000D03*
+%TD*%
+D11*
+%TO.C,J4*%
+X149098000Y-102362000D03*
+D12*
+X151638000Y-102362000D03*
+%TD*%
+D11*
+%TO.C,J2*%
 X140995400Y-87497600D03*
 D12*
 X143535400Y-87497600D03*
-G04 #@! TD*
+%TD*%
 D10*
-G04 #@! TO.C,H1*
+%TO.C,H1*%
 X156500000Y-83000000D03*
-G04 #@! TD*
-D11*
-G04 #@! TO.C,M2*
-X149148800Y-102438200D03*
-D12*
-X151688800Y-102438200D03*
-G04 #@! TD*
-D11*
-G04 #@! TO.C,M1*
-X142544800Y-102432800D03*
-D12*
-X145084800Y-102432800D03*
-G04 #@! TD*
+%TD*%
 M02*
