@@ -25,7 +25,7 @@ float ay[num_sam];
 float az[num_sam];
 
 // Build the Low-pass Filter (Outlined for 2nd Order)
-float b[] = { , , };  // Filter coeffs. can be obtained using the
+float b[] = { , , };      // Filter coeffs. can be obtained using the
 float a[] = { , };        // Python code I provided in the directory
 
 // Holds previous values for filter use
