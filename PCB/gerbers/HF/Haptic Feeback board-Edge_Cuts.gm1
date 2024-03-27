@@ -1,18 +1,18 @@
-%TF.GenerationSoftware,KiCad,Pcbnew,8.0.0*%
-%TF.CreationDate,2024-03-04T01:03:27-06:00*%
-%TF.ProjectId,Haptic Feeback board,48617074-6963-4204-9665-656261636b20,rev?*%
-%TF.SameCoordinates,Original*%
-%TF.FileFunction,Profile,NP*%
+G04 #@! TF.GenerationSoftware,KiCad,Pcbnew,8.0.0*
+G04 #@! TF.CreationDate,2024-03-04T18:09:40-06:00*
+G04 #@! TF.ProjectId,Haptic Feeback board,48617074-6963-4204-9665-656261636b20,rev?*
+G04 #@! TF.SameCoordinates,Original*
+G04 #@! TF.FileFunction,Profile,NP*
 %FSLAX46Y46*%
 G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
-G04 Created by KiCad (PCBNEW 8.0.0) date 2024-03-04 01:03:27*
+G04 Created by KiCad (PCBNEW 8.0.0) date 2024-03-04 18:09:40*
 %MOMM*%
 %LPD*%
 G01*
 G04 APERTURE LIST*
-%TA.AperFunction,Profile*%
+G04 #@! TA.AperFunction,Profile*
 %ADD10C,0.100000*%
-%TD*%
+G04 #@! TD*
 G04 APERTURE END LIST*
 D10*
 X118500000Y-77000000D02*

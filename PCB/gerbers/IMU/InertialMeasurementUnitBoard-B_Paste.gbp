@@ -1,12 +1,12 @@
-%TF.GenerationSoftware,KiCad,Pcbnew,8.0.0*%
-%TF.CreationDate,2024-03-04T00:48:55-06:00*%
-%TF.ProjectId,InertialMeasurementUnitBoard,496e6572-7469-4616-9c4d-656173757265,rev?*%
-%TF.SameCoordinates,Original*%
-%TF.FileFunction,Paste,Bot*%
-%TF.FilePolarity,Positive*%
+G04 #@! TF.GenerationSoftware,KiCad,Pcbnew,8.0.0*
+G04 #@! TF.CreationDate,2024-03-04T18:11:22-06:00*
+G04 #@! TF.ProjectId,InertialMeasurementUnitBoard,496e6572-7469-4616-9c4d-656173757265,rev?*
+G04 #@! TF.SameCoordinates,Original*
+G04 #@! TF.FileFunction,Paste,Bot*
+G04 #@! TF.FilePolarity,Positive*
 %FSLAX46Y46*%
 G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
-G04 Created by KiCad (PCBNEW 8.0.0) date 2024-03-04 00:48:55*
+G04 Created by KiCad (PCBNEW 8.0.0) date 2024-03-04 18:11:22*
 %MOMM*%
 %LPD*%
 G01*
