@@ -1,19 +1,30 @@
 #include <Arduino.h>
 #include <Adafruit_BNO08x.h>
+#include <Time.h>
 
-// SPI mode:       I HAVE NO IDEA IF THIS IS CORRECT
-#define BNO08X_CS 10        // TODO: Diagnose this
+// SPI mode:       THIS MIGHT BE RIGHT?? IDK
+#define BNO08X_CS 10
 #define BNO08X_INT 9
-#define BNO08X_RESET -1
+#define BNO08X_RESET 5
 
 #define num_sam 150
 
-void setup() {
-  Serial.begin(921600);   // TODO: It might also be 115200
+Adafruit_BNO08x bno08x(BNO08X_RESET);
+sh2_SensorValue_t sensorValue;
 
-  // TODO: Complete Setup
+void setup() {
+  Serial.begin(115200);   // TODO: It might also be 921600
   
+  if (!bno08x.begin_SPI(BNO08X_CS, BNO08X_INT)) {
+    Serial.println("Failed to find BNO08x chip");
+  }
+  Serial.println("BNO08x Found!");
 }
+
+unsigned long last;
+unsigned long now;
+unsigned long t = 0;
+unsigned long lastsig = 0;
 
 int steps = 0;
 
@@ -33,11 +44,12 @@ float x[3];
 float y[3];
 
 void loop() { 
-  // Lets pretend all the setup stuff is taken care of.
+  last = millis();
+
   for (int i = 0; i < num_sam; i++){
-    ax[i] = float(analogRead(pin))    // TODO: Replace these with
-    ay[i] = float(analogRead(pin))    // the correct pin numbers
-    az[i] = float(analogRead(pin))
+    ax[i] = sensorValue.un.accelerometer.x    // TODO: Replace these with
+    ay[i] = sensorValue.un.accelerometer.y    // the correct pin numbers
+    az[i] = sensorValue.un.accelerometer.z
     accel[i] = sqrt( (ax[i]*ax[i]) + (ay[i]*ay[i]) + (az[i]*az[i]) )
   }
 
@@ -67,5 +79,15 @@ void loop() {
 
   // TODO: Fix Crude Algorithm, make it work
   // TODO: Calculate SPM, Send DS to Haptic Board for Feedback
+  now = millis();
+  t = t + (now-last);
+  cadence = (steps*60000)/(t)
+  
+  if ((millis() - lastsig) > 10000){
+    if ((cadence > 185) || (cadence < 175)){
+       digitalWrite(pin, HIGH)
+    }
+    lastsig = millis();
+  }
   
 }
