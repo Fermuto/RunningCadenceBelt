@@ -21,12 +21,12 @@ void setup() {
   Serial.println("BNO08x Found!");
 }
 
-unsigned long last;
 unsigned long now;
 unsigned long t = 0;
 unsigned long lastsig = 0;
 
 int steps = 0;
+int cadence;
 
 float threshold = ;  // TODO: Find this number (Testing/Debugging)
 int isStep = 0;
@@ -44,13 +44,11 @@ float x[3];
 float y[3];
 
 void loop() { 
-  last = millis();
-
   for (int i = 0; i < num_sam; i++){
-    ax[i] = sensorValue.un.accelerometer.x    // TODO: Replace these with
-    ay[i] = sensorValue.un.accelerometer.y    // the correct pin numbers
-    az[i] = sensorValue.un.accelerometer.z
-    accel[i] = sqrt( (ax[i]*ax[i]) + (ay[i]*ay[i]) + (az[i]*az[i]) )
+    ax[i] = sensorValue.un.accelerometer.x;    // TODO: Replace these with
+    ay[i] = sensorValue.un.accelerometer.y;    // the correct pin numbers
+    az[i] = sensorValue.un.accelerometer.z;
+    accel[i] = sqrt( (ax[i]*ax[i]) + (ay[i]*ay[i]) + (az[i]*az[i]) );
   }
 
 //--------------------------------Apply the Filter--------------------------------
@@ -80,14 +78,14 @@ void loop() {
   // TODO: Fix Crude Algorithm, make it work
   // TODO: Calculate SPM, Send DS to Haptic Board for Feedback
   now = millis();
-  t = t + (now-last);
-  cadence = (steps*60000)/(t)
+  t = t + now;
+  cadence = (steps*60000)/(t);
   
-  if ((millis() - lastsig) > 10000){
+  if ((now - lastsig) > 10000){
     if ((cadence > 185) || (cadence < 175)){
        digitalWrite(pin, HIGH)
     }
-    lastsig = millis();
+    lastsig = now;
   }
   
 }
