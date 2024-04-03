@@ -61,7 +61,7 @@ void loop() {
     y[2] = y[1];
     y[1] = y[0];
 
-    accel[i] = y[0]
+    accel[i] = y[0];
 //--------------------------------------------------------------------------------
   
     delay(50);        // TODO: Will adjust this during debugging
@@ -76,7 +76,7 @@ void loop() {
   }
 
   // TODO: Fix Crude Algorithm, make it work
-  // TODO: Calculate SPM, Send DS to Haptic Board for Feedback
+
   now = millis();
   t = t + now;
   cadence = (steps*60000)/(t);
