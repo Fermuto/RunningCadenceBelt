@@ -22,13 +22,12 @@ void setup() {
 }
 
 unsigned long now;
-unsigned long t = 0;
 unsigned long lastsig = 0;
 
 int steps = 0;
 int cadence;
 
-float threshold = ;  // TODO: Find this number (Testing/Debugging)
+float threshold = 0;  // TODO: Find this number (Testing/Debugging)
 int isStep = 0;
 float accel[num_sam];
 float ax[num_sam];
@@ -36,8 +35,8 @@ float ay[num_sam];
 float az[num_sam];
 
 // Build the Low-pass Filter (Outlined for 2nd Order)
-float b[] = { , , };      // Filter coeffs. can be obtained using the
-float a[] = { , };        // Python code I provided in the directory
+float b[] = {0.007777, 0.01555399, 0.007777};       // Filter coeffs. can be obtained using the
+float a[] = {-1.73550016, 0.76660814};              // Python code I provided in the directory
 
 // Holds previous values for filter use
 float x[3];
@@ -45,8 +44,8 @@ float y[3];
 
 void loop() { 
   for (int i = 0; i < num_sam; i++){
-    ax[i] = sensorValue.un.accelerometer.x;    // TODO: Replace these with
-    ay[i] = sensorValue.un.accelerometer.y;    // the correct pin numbers
+    ax[i] = sensorValue.un.accelerometer.x;    // TODO: Fix this
+    ay[i] = sensorValue.un.accelerometer.y;
     az[i] = sensorValue.un.accelerometer.z;
     accel[i] = sqrt( (ax[i]*ax[i]) + (ay[i]*ay[i]) + (az[i]*az[i]) );
   }
@@ -78,12 +77,11 @@ void loop() {
   // TODO: Fix Crude Algorithm, make it work
 
   now = millis();
-  t = t + now;
-  cadence = (steps*60000)/(t);
+  cadence = (steps*60000)/(now);
   
   if ((now - lastsig) > 10000){
     if ((cadence > 185) || (cadence < 175)){
-       digitalWrite(pin, HIGH)
+       // digitalWrite(pin, HIGH)
     }
     lastsig = now;
   }

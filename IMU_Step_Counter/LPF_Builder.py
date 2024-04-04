@@ -1,7 +1,7 @@
 import numpy as np
 from scipy import signal
 
-freq_Hz = 5       # Frequency of overall IMU signal (Currently chosen arbitrarily)
+freq_Hz = 30       # Frequency of overall IMU signal (Currently chosen arbitrarily)
 
 #-----------------------------Continuous Transfer Function-------------------------------
 wc = 2*np.pi*freq_Hz                # Cutoff Frequency
