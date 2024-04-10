@@ -18,8 +18,7 @@ Adafruit_BNO08x bno08x(BNO08X_RESET);
 sh2_SensorValue_t sensorValue;
 
 void setup() {
-  Serial.begin(115200);   // TODO: It might also be 921600
-  digitalWrite(BNO08X_CS, HIGH)
+  Serial.begin(115200);
   delay(100);
   Serial.println("ax,ay,az,Net_Acceleration");
   
@@ -83,7 +82,7 @@ void loop() {
     accel[i] = y[0];
 //--------------------------------------------------------------------------------
   
-    delay(25);        // TODO: Will adjust this during debugging
+    delay(50);        // TODO: Will adjust this during debugging
 
     if ((accel[i] > threshold) && (isStep == 0)){
       steps = steps + 1;
@@ -101,8 +100,19 @@ void loop() {
   //Serial.println(cadence);
   
   if ((now - lastsig) > 10000){
-    if ((cadence > (target+5)) || (cadence < (target-5))){
+    if ((cadence > (target+5)){
        // digitalWrite(pin, HIGH)
+       delay(1000);
+       // digitalWrite(pin, LOW)
+    }
+    if (cadence < (target-5))){
+       // digitalWrite(pin, HIGH)
+       delay(500);
+       // digitalWrite(pin, LOW)
+       delay(250);
+       // digitalWrite(pin, HIGH)
+       delay(500);
+       // digitalWrite(pin, LOW)
     }
     lastsig = now;
   }
