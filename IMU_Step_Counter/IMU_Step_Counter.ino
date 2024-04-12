@@ -3,30 +3,21 @@
 #include <Time.h>
 
 // SPI mode:
-#define ESP32_MOSI 13
-#define ESP32_MISO 12
-#define ESP32_SCLK 14
-#define ESP32_CS 15
+#define ESP32_MOSI GPIO_NUM_13
+#define ESP32_MISO GPIO_NUM_12
+#define ESP32_SCLK GPIO_NUM_14
+#define ESP32_CS GPIO_NUM_15
 
-#define BNO08X_CS 10
-#define BNO08X_INT 9
-#define BNO08X_RESET 5
+#define BNO08X_CS GPIO_NUM_10
+#define BNO08X_INT GPIO_NUM_9
+#define BNO08X_RESET GPIO_NUM_5
+
+// #define Test5 GPIO_NUM_5
 
 #define num_sam 150
 
 Adafruit_BNO08x bno08x(BNO08X_RESET);
 sh2_SensorValue_t sensorValue;
-
-void setup() {
-  Serial.begin(115200);
-  delay(100);
-  Serial.println("ax,ay,az,Net_Acceleration");
-  
-  if (!bno08x.begin_SPI(BNO08X_CS, BNO08X_INT)) {
-    Serial.println("Failed to find BNO08x chip");
-  }
-  Serial.println("BNO08x Found!");
-}
 
 unsigned long now;
 unsigned long lastsig = 0;
@@ -50,7 +41,35 @@ float a[] = {-1.73550016, 0.76660814};              // Python code I provided in
 float x[3];
 float y[3];
 
+void setup() {
+  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(GPIO_NUM_4, OUTPUT);
+  Serial.begin(115200);
+  while (!Serial) delay(10);
+
+  Serial.println("ax,ay,az,Net_Acceleration");
+  bno08x.begin_SPI(BNO08X_CS, BNO08X_INT);
+  if (bno08x.begin_SPI(BNO08X_CS, BNO08X_INT)) {
+    Serial.println("Failed to find BNO08x chip");
+    digitalWrite(LED_BUILTIN, HIGH);
+  }
+  else {
+    digitalWrite(LED_BUILTIN, LOW);
+  }
+  Serial.println("BNO08x Found!");
+  if (bno08x.wasReset()) {
+    //Serial.println("Failed to find BNO08x chip");
+    digitalWrite(GPIO_NUM_4, HIGH);
+  }
+  else {
+    digitalWrite(GPIO_NUM_4, LOW);
+  }
+}
+
 void loop() { 
+  // Serial.print('*');
+  //digitalWrite(LED_BUILTIN, HIGH);
+
   for (int i = 0; i < num_sam; i++){
     ax[i] = sensorValue.un.accelerometer.x;    // TODO: Fix this
     Serial.print(ax[i]);
@@ -69,7 +88,8 @@ void loop() {
     delay(1);
   }
 
-//--------------------------------Apply the Filter--------------------------------
+  //digitalWrite(LED_BUILTIN, LOW);
+  //--------------------------------Apply the Filter--------------------------------
   for (int i = 0; i < num_sam; i++){
     x[0] = accel[i];
     y[0] = b[0]*x[0] + b[1]*x[1] + b[2]*x[2] - a[1]*y[1] - a[2]*y[2];
@@ -80,9 +100,9 @@ void loop() {
     y[1] = y[0];
 
     accel[i] = y[0];
-//--------------------------------------------------------------------------------
+  //--------------------------------------------------------------------------------
   
-    delay(50);        // TODO: Will adjust this during debugging
+    delay(500);        // TODO: Will adjust this during debugging
 
     if ((accel[i] > threshold) && (isStep == 0)){
       steps = steps + 1;
@@ -100,19 +120,19 @@ void loop() {
   //Serial.println(cadence);
   
   if ((now - lastsig) > 10000){
-    if ((cadence > (target+5)){
-       // digitalWrite(pin, HIGH)
-       delay(1000);
-       // digitalWrite(pin, LOW)
+    if (cadence > (target+5)){
+        // digitalWrite(pin, HIGH)
+        delay(1000);
+        // digitalWrite(pin, LOW)
     }
-    if (cadence < (target-5))){
-       // digitalWrite(pin, HIGH)
-       delay(500);
-       // digitalWrite(pin, LOW)
-       delay(250);
-       // digitalWrite(pin, HIGH)
-       delay(500);
-       // digitalWrite(pin, LOW)
+    if (cadence < (target-5)){
+        // digitalWrite(pin, HIGH)
+        delay(500);
+        // digitalWrite(pin, LOW)
+        delay(250);
+        // digitalWrite(pin, HIGH)
+        delay(500);
+        // digitalWrite(pin, LOW)
     }
     lastsig = now;
   }
