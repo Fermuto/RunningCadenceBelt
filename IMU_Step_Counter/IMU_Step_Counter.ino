@@ -1,23 +1,32 @@
 #include <Arduino.h>
 #include <Adafruit_BNO08x.h>
+#include <Time.h>
 
-// SPI mode:       I HAVE NO IDEA IF THIS IS CORRECT
-#define BNO08X_CS 10        // TODO: Diagnose this
-#define BNO08X_INT 9
-#define BNO08X_RESET -1
+// SPI mode:
+#define ESP32_MOSI GPIO_NUM_13
+#define ESP32_MISO GPIO_NUM_12
+#define ESP32_SCLK GPIO_NUM_14
+#define ESP32_CS GPIO_NUM_15
+
+#define BNO08X_CS GPIO_NUM_10
+#define BNO08X_INT GPIO_NUM_9
+#define BNO08X_RESET GPIO_NUM_5
+
+// #define Test5 GPIO_NUM_5
 
 #define num_sam 150
 
-void setup() {
-  Serial.begin(921600);   // TODO: It might also be 115200
+Adafruit_BNO08x bno08x(BNO08X_RESET);
+sh2_SensorValue_t sensorValue;
 
-  // TODO: Complete Setup
-  
-}
+unsigned long now;
+unsigned long lastsig = 0;
 
 int steps = 0;
+int cadence;
+int target = 180;
 
-float threshold = ;  // TODO: Find this number (Testing/Debugging)
+float threshold = 0;  // TODO: Find this number (Testing/Debugging)
 int isStep = 0;
 float accel[num_sam];
 float ax[num_sam];
@@ -25,23 +34,62 @@ float ay[num_sam];
 float az[num_sam];
 
 // Build the Low-pass Filter (Outlined for 2nd Order)
-float b[] = { , , };      // Filter coeffs. can be obtained using the
-float a[] = { , };        // Python code I provided in the directory
+float b[] = {0.007777, 0.01555399, 0.007777};       // Filter coeffs. can be obtained using the
+float a[] = {-1.73550016, 0.76660814};              // Python code I provided in the directory
 
 // Holds previous values for filter use
 float x[3];
 float y[3];
 
+void setup() {
+  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(GPIO_NUM_4, OUTPUT);
+  Serial.begin(115200);
+  while (!Serial) delay(10);
+
+  Serial.println("ax,ay,az,Net_Acceleration");
+  bno08x.begin_SPI(BNO08X_CS, BNO08X_INT);
+  if (bno08x.begin_SPI(BNO08X_CS, BNO08X_INT)) {
+    Serial.println("Failed to find BNO08x chip");
+    digitalWrite(LED_BUILTIN, HIGH);
+  }
+  else {
+    digitalWrite(LED_BUILTIN, LOW);
+  }
+  Serial.println("BNO08x Found!");
+  if (bno08x.wasReset()) {
+    //Serial.println("Failed to find BNO08x chip");
+    digitalWrite(GPIO_NUM_4, HIGH);
+  }
+  else {
+    digitalWrite(GPIO_NUM_4, LOW);
+  }
+}
+
 void loop() { 
-  // Lets pretend all the setup stuff is taken care of.
+  // Serial.print('*');
+  //digitalWrite(LED_BUILTIN, HIGH);
+
   for (int i = 0; i < num_sam; i++){
-    ax[i] = float(analogRead(pin))    // TODO: Replace these with
-    ay[i] = float(analogRead(pin))    // the correct pin numbers
-    az[i] = float(analogRead(pin))
-    accel[i] = sqrt( (ax[i]*ax[i]) + (ay[i]*ay[i]) + (az[i]*az[i]) )
+    ax[i] = sensorValue.un.accelerometer.x;    // TODO: Fix this
+    Serial.print(ax[i]);
+    Serial.print("\t");
+    delay(1);
+    ay[i] = sensorValue.un.accelerometer.y;
+    Serial.print(ay[i]);
+    Serial.print("\t");
+    delay(1);
+    az[i] = sensorValue.un.accelerometer.z;
+    Serial.print(az[i]);
+    Serial.print("\t");
+    delay(1);
+    accel[i] = sqrt( (ax[i]*ax[i]) + (ay[i]*ay[i]) + (az[i]*az[i]) );
+    Serial.println(accel[i]);
+    delay(1);
   }
 
-//--------------------------------Apply the Filter--------------------------------
+  //digitalWrite(LED_BUILTIN, LOW);
+  //--------------------------------Apply the Filter--------------------------------
   for (int i = 0; i < num_sam; i++){
     x[0] = accel[i];
     y[0] = b[0]*x[0] + b[1]*x[1] + b[2]*x[2] - a[1]*y[1] - a[2]*y[2];
@@ -51,10 +99,10 @@ void loop() {
     y[2] = y[1];
     y[1] = y[0];
 
-    accel[i] = y[0]
-//--------------------------------------------------------------------------------
+    accel[i] = y[0];
+  //--------------------------------------------------------------------------------
   
-    delay(50);        // TODO: Will adjust this during debugging
+    delay(500);        // TODO: Will adjust this during debugging
 
     if ((accel[i] > threshold) && (isStep == 0)){
       steps = steps + 1;
@@ -66,6 +114,27 @@ void loop() {
   }
 
   // TODO: Fix Crude Algorithm, make it work
-  // TODO: Calculate SPM, Send DS to Haptic Board for Feedback
+
+  now = millis();
+  cadence = (steps*60000)/(now);
+  //Serial.println(cadence);
+  
+  if ((now - lastsig) > 10000){
+    if (cadence > (target+5)){
+        // digitalWrite(pin, HIGH)
+        delay(1000);
+        // digitalWrite(pin, LOW)
+    }
+    if (cadence < (target-5)){
+        // digitalWrite(pin, HIGH)
+        delay(500);
+        // digitalWrite(pin, LOW)
+        delay(250);
+        // digitalWrite(pin, HIGH)
+        delay(500);
+        // digitalWrite(pin, LOW)
+    }
+    lastsig = now;
+  }
   
 }
