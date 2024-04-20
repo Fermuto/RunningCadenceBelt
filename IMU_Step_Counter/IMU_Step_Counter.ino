@@ -70,6 +70,8 @@ void loop() {
   // Serial.print('*');
   //digitalWrite(LED_BUILTIN, HIGH);
 
+    Serial.print(az[i]);
+    Serial.print("\t");
   for (int i = 0; i < num_sam; i++){
     ax[i] = sensorValue.un.accelerometer.x;    // TODO: Fix this
     Serial.print(ax[i]);
@@ -80,8 +82,6 @@ void loop() {
     Serial.print("\t");
     delay(1);
     az[i] = sensorValue.un.accelerometer.z;
-    Serial.print(az[i]);
-    Serial.print("\t");
     delay(1);
     accel[i] = sqrt( (ax[i]*ax[i]) + (ay[i]*ay[i]) + (az[i]*az[i]) );
     Serial.println(accel[i]);
