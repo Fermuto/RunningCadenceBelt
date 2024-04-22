@@ -51,90 +51,78 @@ void setup() {
   bno08x.begin_SPI(BNO08X_CS, BNO08X_INT);
   if (bno08x.begin_SPI(BNO08X_CS, BNO08X_INT)) {
     Serial.println("Failed to find BNO08x chip");
-    digitalWrite(LED_BUILTIN, HIGH);
-  }
-  else {
-    digitalWrite(LED_BUILTIN, LOW);
+    while (1);
   }
   Serial.println("BNO08x Found!");
-  if (bno08x.wasReset()) {
-    //Serial.println("Failed to find BNO08x chip");
-    digitalWrite(GPIO_NUM_4, HIGH);
-  }
-  else {
-    digitalWrite(GPIO_NUM_4, LOW);
-  }
 }
 
 void loop() { 
   // Serial.print('*');
   //digitalWrite(LED_BUILTIN, HIGH);
-
-    Serial.print(az[i]);
-    Serial.print("\t");
-  for (int i = 0; i < num_sam; i++){
-    ax[i] = sensorValue.un.accelerometer.x;    // TODO: Fix this
-    Serial.print(ax[i]);
-    Serial.print("\t");
-    delay(1);
-    ay[i] = sensorValue.un.accelerometer.y;
-    Serial.print(ay[i]);
-    Serial.print("\t");
-    delay(1);
-    az[i] = sensorValue.un.accelerometer.z;
-    delay(1);
-    accel[i] = sqrt( (ax[i]*ax[i]) + (ay[i]*ay[i]) + (az[i]*az[i]) );
-    Serial.println(accel[i]);
-    delay(1);
-  }
-
-  //digitalWrite(LED_BUILTIN, LOW);
-  //--------------------------------Apply the Filter--------------------------------
-  for (int i = 0; i < num_sam; i++){
-    x[0] = accel[i];
-    y[0] = b[0]*x[0] + b[1]*x[1] + b[2]*x[2] - a[1]*y[1] - a[2]*y[2];
-
-    x[2] = x[1];
-    x[1] = x[0];
-    y[2] = y[1];
-    y[1] = y[0];
-
-    accel[i] = y[0];
-  //--------------------------------------------------------------------------------
-  
-    delay(500);        // TODO: Will adjust this during debugging
-
-    if ((accel[i] > threshold) && (isStep == 0)){
-      steps = steps + 1;
-      isStep = 1;
-    }
-    if ((accel[i] < threshold) && (isStep == 1)){
-      isStep = 0;
-    }
-  }
-
-  // TODO: Fix Crude Algorithm, make it work
-
-  now = millis();
-  cadence = (steps*60000)/(now);
-  //Serial.println(cadence);
-  
-  if ((now - lastsig) > 10000){
-    if (cadence > (target+5)){
-        // digitalWrite(pin, HIGH)
-        delay(1000);
-        // digitalWrite(pin, LOW)
-    }
-    if (cadence < (target-5)){
-        // digitalWrite(pin, HIGH)
-        delay(500);
-        // digitalWrite(pin, LOW)
-        delay(250);
-        // digitalWrite(pin, HIGH)
-        delay(500);
-        // digitalWrite(pin, LOW)
-    }
-    lastsig = now;
-  }
+  Serial.print("Bruh");
+//  for (int i = 0; i < num_sam; i++){
+//    ax[i] = sensorValue.un.accelerometer.x;    // TODO: Fix this
+//    Serial.print(ax[i]);
+//    Serial.print("\t");
+//    delay(1);
+//    ay[i] = sensorValue.un.accelerometer.y;
+//    Serial.print(ay[i]);
+//    Serial.print("\t");
+//    delay(1);
+//    az[i] = sensorValue.un.accelerometer.z;
+//    delay(1);
+//    accel[i] = sqrt( (ax[i]*ax[i]) + (ay[i]*ay[i]) + (az[i]*az[i]) );
+//    Serial.println(accel[i]);
+//    delay(1);
+//  }
+//
+//  //digitalWrite(LED_BUILTIN, LOW);
+//  //--------------------------------Apply the Filter--------------------------------
+//  for (int i = 0; i < num_sam; i++){
+//    x[0] = accel[i];
+//    y[0] = b[0]*x[0] + b[1]*x[1] + b[2]*x[2] - a[1]*y[1] - a[2]*y[2];
+//
+//    x[2] = x[1];
+//    x[1] = x[0];
+//    y[2] = y[1];
+//    y[1] = y[0];
+//
+//    accel[i] = y[0];
+//  //--------------------------------------------------------------------------------
+//  
+//    delay(500);        // TODO: Will adjust this during debugging
+//
+//    if ((accel[i] > threshold) && (isStep == 0)){
+//      steps = steps + 1;
+//      isStep = 1;
+//    }
+//    if ((accel[i] < threshold) && (isStep == 1)){
+//      isStep = 0;
+//    }
+//  }
+//
+//  // TODO: Fix Crude Algorithm, make it work
+//
+//  now = millis();
+//  cadence = (steps*60000)/(now);
+//  //Serial.println(cadence);
+//  
+//  if ((now - lastsig) > 10000){
+//    if (cadence > (target+5)){
+//        // digitalWrite(pin, HIGH)
+//        delay(1000);
+//        // digitalWrite(pin, LOW)
+//    }
+//    if (cadence < (target-5)){
+//        // digitalWrite(pin, HIGH)
+//        delay(500);
+//        // digitalWrite(pin, LOW)
+//        delay(250);
+//        // digitalWrite(pin, HIGH)
+//        delay(500);
+//        // digitalWrite(pin, LOW)
+//    }
+//    lastsig = now;
+//  }
   
 }
