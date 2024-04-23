@@ -14,9 +14,10 @@ int steps = 0;
 int cadence;
 int target = 180;
 
-float threshold = 14;
+float threshold = 17;
 int isStep = 0;
 unsigned long lastsig = 0;
+unsigned long lastcad = 0;
 unsigned long now = 0;
 unsigned long samplestart = 0;
 unsigned long sampleend = 0;
@@ -100,7 +101,10 @@ void loop() {
   }
 
   now = millis();
-  cadence = (steps*60000)/(now-lastsig);
+  
+  if ((now - lastcad) > 200){
+    cadence = (steps*60000)/(now-lastsig);
+  }
   Serial.print(" |\tSteps= ");
   Serial.print(steps);
   Serial.print(" |\tCadence= ");
