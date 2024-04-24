@@ -13,11 +13,16 @@ Adafruit_BNO055 bno = Adafruit_BNO055(55, 0x28, &Wire);
 int steps = 0;
 int cadence;
 int target = 180;
+int button = 0;
+int lastbutton = 0;
+int buttonpressed = 0;
+int buttonused = 0;
 
 float threshold = 17;
 int isStep = 0;
 unsigned long lastsig = 0;
 unsigned long lastcad = 0;
+unsigned long buttonheld = 0;
 unsigned long now = 0;
 unsigned long samplestart = 0;
 unsigned long sampleend = 0;
@@ -43,6 +48,7 @@ void setup() {
 
   pinMode(LED_BUILTIN, OUTPUT);
   pinMode(4, OUTPUT);
+  pinMode(5, INPUT);
   digitalWrite(LED_BUILTIN, LOW);
   digitalWrite(4, LOW);
   
@@ -58,6 +64,7 @@ void setup() {
 }
 
 void loop() {
+  button = digitalRead(5);
   samplestart = millis();
   // grab Linear Acceleration Data
   sensors_event_t LinearAccelerationData;
@@ -101,14 +108,36 @@ void loop() {
   }
 
   now = millis();
-  
+
+  // Update cadence ever 0.2s
   if ((now - lastcad) > 200){
     cadence = (steps*60000)/(now-lastsig);
   }
+
+  if ((button == 1) && (lastbutton == 0)){
+    buttonheld = millis();
+  }
+  else if ((button == 0) && (lastbutton == 1)){
+    if (now - buttonheld > 2000){
+      target = 180;
+    }
+    else{
+      target = target - 5;
+    }
+    buttonused = 0;
+  }
+
+
   Serial.print(" |\tSteps= ");
   Serial.print(steps);
   Serial.print(" |\tCadence= ");
-  Serial.println(cadence);
+  Serial.print(cadence);
+  Serial.print(" |\tTarget= ");
+  Serial.print(target);
+  Serial.print(" |\tButton= ");
+  Serial.println(button);
+
+  
   
   // Evaluate cadence every 10 seconds (effectively, windowing)
   if ((now - lastsig) > 10000){
@@ -122,22 +151,20 @@ void loop() {
     else if (cadence < (target-10)){
       if (cadence > 120){
         digitalWrite(4, HIGH);
-        digitalWrite(LED_BUILTIN, HIGH);
         delay(300);
         digitalWrite(4, LOW);
-        digitalWrite(LED_BUILTIN, LOW);
         delay(100);
         digitalWrite(4, HIGH);
-        digitalWrite(LED_BUILTIN, HIGH);
         delay(300);
         digitalWrite(4, LOW);
-        digitalWrite(LED_BUILTIN, LOW);
+
       }
     }
     lastsig = now;
     steps = 0; // Reset step count evry 10 seconds to acquire new window
   }
 
-
+  
+  lastbutton = button;
   
 }
